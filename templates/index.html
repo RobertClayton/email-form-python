@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../static/style.css">
+  <title>Email Form</title>
+</head>
+<body>
+  <div class="container">
+    {% if message %}
+      <p class="message">{{ message | safe }}</p>
+    {% endif %}
+
+    <form action="/submit" method="POST">
+      <div class="form-group">
+        <h3>Name</h3>
+        <input type="text" name="customer_name" placeholder="Enter your name"/>
+      </div>
+
+      <div class="form-group">
+        <h3>Brand</h3>
+        <select name="brand">
+          <option value="">Select Brand</option>
+          <option value="Land Rover">Land Rover</option>
+          <option value="Ford">Ford</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <h3>Rating</h3>
+        <input type="radio" name="rating" value="1"/> 1
+        <input type="radio" name="rating" value="2"/> 2
+        <input type="radio" name="rating" value="3"/> 3
+        <input type="radio" name="rating" value="4"/> 4
+        <input type="radio" name="rating" value="5"/> 5
+        <input type="radio" name="rating" value="6"/> 6
+        <input type="radio" name="rating" value="7"/> 7
+        <input type="radio" name="rating" value="8"/> 8
+        <input type="radio" name="rating" value="9"/> 9
+        <input type="radio" name="rating" value="10" checked/> 10
+      </div>
+
+      <div class="form-group">
+        <h3>Other comments</h3>
+        <textarea
+                name="comments"
+                id=""
+                cols="30"
+                rows="10"
+                placeholder="Any other comments?"
+        ></textarea>
+      </div>
+
+      <input type="submit" value="submit" class="btn"/>
+    </form>
+  </div>
+</body>
+</html>
